@@ -1,3 +1,37 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+	<h1 id="titulo">
+	  {{title}}
+	</h1>
+</div>
+
+<div *ngFor='let varTemp of opciones; let i = index'>
+	<app-input (eventoPersonalizado)="funcionReceptora($event)" [varQueRecibe] = "varTemp.opcion"> </app-input>
+	<!--<app-input (eventoPersonalizado)="funcionReceptora($event)" varQueRecibe = {{varTemp.opcion}} > </app-input> -->
+</div>
+
+<div>
+	<app-input (eventoPersonalizado)="funcionReceptora($event)" varQueRecibe = {{title}} > </app-input>
+</div>
+
+<div>
+	<p resaltador>Usted selecciono: {{varReceptora}}</p>
+</div>
+
+<div>
+	<h2> Usando un Pipe para convertir un String en un number </h2>
+	<h3>Factor de cambio de $$ a CLP</h3>
+	<div>
+		<p>Un dolar es equivalente a  <input [(ngModel)] = "factorCambio" /> </p>
+	</div>
+
+	<h3>Convertidor de Dolares a Pesos Chilenos</h3>
+	<div>
+		<input [(ngModel)] = "cantDolar" /> Dolares  -->  <input class="Result" value="{{factorCambio | convertidorDolar:cantDolar}}" disabled />  CLP
+	</div>
+	
+	<h3>Convertidor de Pesos Chilenos a Dolares</h3>
+	<div>
+		<input [(ngModel)] = "cantPesos" /> Pesos Chilenos  --> <input class="Result" value="{{factorCambio | convertidorPesos:cantPesos}}" disabled /> $$ $$
+	</div>
+
+</div>
