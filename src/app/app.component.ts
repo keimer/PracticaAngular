@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ticketServicio } from "./servicios/ticket.service";
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,12 @@ export class AppComponent {
   cantDolar:string = '1';
   factorCambio:number = 655;
   cantPesos:number = 655;
+  tickets:any;
+
+  //Los servicios se injectan siempre desde el método constructor
+  constructor(ticket:ticketServicio){
+    this.tickets = ticket.getTickets();
+  }
 
   //nombre = 'Keimer Zamora';
   opciones = [

@@ -17,21 +17,33 @@
 	<p resaltador>Usted selecciono: {{varReceptora}}</p>
 </div>
 
-<div>
+<br>
+<!--<div>
 	<h2> Usando un Pipe para convertir un String en un number </h2>
 	<h3>Factor de cambio de $$ a CLP</h3>
 	<div>
 		<p>Un dolar es equivalente a  <input [(ngModel)] = "factorCambio" /> </p>
 	</div>
 
-	<h3>Convertidor de Dolares a Pesos Chilenos</h3>
+	<h3 Mayuscula>Convertidor de Dolares a Pesos Chilenos</h3>
 	<div>
-		<input [(ngModel)] = "cantDolar" /> Dolares  -->  <input class="Result" value="{{factorCambio | convertidorDolar:cantDolar}}" disabled />  CLP
+		<input [(ngModel)] = "cantDolar" /> Dolares  TO  <input class="Result" value="{{factorCambio | convertidorDolar:cantDolar}}" disabled />  CLP
 	</div>
 	
 	<h3>Convertidor de Pesos Chilenos a Dolares</h3>
 	<div>
-		<input [(ngModel)] = "cantPesos" /> Pesos Chilenos  --> <input class="Result" value="{{factorCambio | convertidorPesos:cantPesos}}" disabled /> $$ $$
+		<input [(ngModel)] = "cantPesos" /> Pesos Chilenos  TO <input class="Result" value="{{factorCambio | convertidorPesos:cantPesos}}" disabled /> $$ $$
 	</div>
 
+</div>-->
+
+<br>
+
+<div>
+	<ul>
+		<li *ngFor = 'let ticket_Incidente of tickets'>
+			<b>Ticket N° {{ticket_Incidente.id}} </b> - {{ticket_Incidente.titulo}} 
+			<span resaltador>{{ticket_Incidente.estado}}</span>
+		</li>
+	</ul>
 </div>
